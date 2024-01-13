@@ -1,0 +1,24 @@
+m = ''
+def assist():
+    global m
+    user = input("Hello there, how can I service you?")
+    m = user
+    return m
+
+from google.colab import userdata
+userdata.get('gate_key')
+
+import pathlib
+import textwrap
+from IPython.display import display
+from IPython.display import Markdown
+import google.generativeai as genai
+
+API_key = userdata.get('gate_key')
+
+genai.configure(api_key = API_key)
+
+assist()
+model = genai.GenerativeModel('gemini-pro')
+response = model.generate_content(m)
+Markdown(response.text)
