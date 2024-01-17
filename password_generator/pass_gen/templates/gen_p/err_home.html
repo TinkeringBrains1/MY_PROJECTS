@@ -1,0 +1,26 @@
+Welcome to the password generator!
+<form action="{% url 'gen_pass' %}">
+  <select name ="length">
+    <option value = "6">6</option>
+    <option value = "7">7</option>
+    <option value = "8">8</option>
+    <option value = "9 ">9</option>
+    <option value = "10">10</option>
+    <option value = "11">11</option>
+    <option value = "12" selected="selected">12</option>
+    <option value = "13">13</option>
+    <option value = "14">14</option>
+    <option value = "15">15</option>
+  </select>
+  <br>
+  <input type = "checkbox" name="uppercase">UPPERCASE
+  <br>
+  <input type = "checkbox" name="numbers">NUMBERS
+  <br>
+  <input type = "checkbox" name="special">ALPHA-NUMBERIC
+  <br>
+  <input type= "text" value="">
+
+  <input type= "submit" value="Generate password">
+</form>
+  Error! Please input valid password length
